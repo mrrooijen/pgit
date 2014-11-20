@@ -93,16 +93,22 @@ git clone https://github.com/meskyanichi/pgit.git
 cd pgit
 ```
 
-Install dependencies:
+To download package dependencies:
 
 ```sh
-go get -t
+go get -t -d
 ```
 
-Run test suite:
+To run test suite:
 
 ```sh
-go test ./...
+./bin/test
+```
+
+To build binaries for both Darwin/Linux:
+
+```sh
+./bin/build [open]
 ```
 
 Create branch, add/improve/test feature, submit pull request.
