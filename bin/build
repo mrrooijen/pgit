@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo "Getting dependencies..."
+go get -d -t
+
+echo "Getting goxc..."
+go get github.com/laher/goxc
+
+echo "Cleaning $GOPATH/pkg..."
+rm -rf $GOPATH/pkg
+
+echo "Building for Darwin/Linux..."
+goxc -bc="linux,!arm darwin"
+
+if [[ "$1" == "open" ]]; then
+  open $GOPATH/bin/pgit-xc/snapshot
+fi

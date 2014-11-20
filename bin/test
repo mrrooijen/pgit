@@ -1,0 +1,10 @@
+#! /bin/bash
+
+echo "Getting dependencies..."
+go get -d -t
+
+echo "Cleaning $GOPATH/pkg..."
+rm -rf $GOPATH/pkg
+
+echo "Testing..."
+go test ./...
