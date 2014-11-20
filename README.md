@@ -93,10 +93,10 @@ git clone https://github.com/meskyanichi/pgit.git
 cd pgit
 ```
 
-To download package dependencies:
+To run the program from source:
 
 ```sh
-go get -t -d
+./bin/run [args]
 ```
 
 To run test suite:
