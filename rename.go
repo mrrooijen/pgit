@@ -23,6 +23,8 @@ func Rename(args []string) {
 		os.Exit(1)
 	}
 
+	defer client.Close()
+
 	if !directoryExists(client, name) {
 		fmt.Fprintln(os.Stderr, "Repository", name, "doesn't exist.")
 		os.Exit(1)
