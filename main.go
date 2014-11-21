@@ -2,31 +2,30 @@ package main
 
 import "fmt"
 import "os"
-import "github.com/meskyanichi/pgit/commands"
 
 func main() {
 	cmd, args, ok := parseInput(os.Args)
 
 	if !ok {
-		commands.Help()
+		Help()
 		os.Exit(2)
 	}
 
 	switch cmd {
 	case "list":
-		commands.List()
+		List()
 	case "clip":
-		commands.Clip(args)
+		Clip(args)
 	case "create":
-		commands.Create(args)
+		Create(args)
 	case "rename":
-		commands.Rename(args)
+		Rename(args)
 	case "destroy":
-		commands.Destroy(args)
+		Destroy(args)
 	case "version":
-		commands.Version()
+		Version()
 	case "help":
-		commands.Help()
+		Help()
 	default:
 		fmt.Fprintln(os.Stderr, "Command", "`"+cmd+"`", "not found in pgit.")
 		fmt.Fprintln(os.Stderr, "Run `pgit help` to see a list of available commands.")

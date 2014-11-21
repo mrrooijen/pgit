@@ -1,9 +1,9 @@
-package commands
+package main
 
-import "os"
 import "fmt"
+import "os"
 
-func Create(args []string) {
+func Destroy(args []string) {
 	if len(args) == 0 {
 		fmt.Fprintln(os.Stderr, "Missing argument: <name>")
 		os.Exit(1)
@@ -17,18 +17,18 @@ func Create(args []string) {
 		os.Exit(1)
 	}
 
-	if repositoryExists(client, name) {
-		fmt.Fprintln(os.Stderr, "Repository", name, "already exists.")
+	if !directoryExists(client, name) {
+		fmt.Fprintln(os.Stderr, "Repository", name, "doesn't exist.")
 		os.Exit(1)
 	}
 
-	command := "mkdir -p " + name + ".git && cd " + name + ".git && git --bare init"
+	command := "rm -rf " + name + ".git"
 	_, stderr, err := client.Run(command)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "Failed to create repository.")
+		fmt.Fprintln(os.Stderr, "Failed to destroy repository.")
 		fmt.Fprintln(os.Stderr, err.Error(), stderr)
 		os.Exit(1)
 	}
 
-	fmt.Println("Repository", name, "created.")
+	fmt.Println("Repository", name, "destroyed.")
 }
