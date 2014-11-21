@@ -17,6 +17,8 @@ func Create(args []string) {
 		os.Exit(1)
 	}
 
+	defer client.Close()
+
 	if repositoryExists(client, name) {
 		fmt.Fprintln(os.Stderr, "Repository", name, "already exists.")
 		os.Exit(1)

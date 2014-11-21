@@ -12,6 +12,8 @@ func List() {
 		os.Exit(1)
 	}
 
+	defer client.Close()
+
 	repositories, err := getRepositories(client)
 
 	if err != nil {
