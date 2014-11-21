@@ -6,4 +6,5 @@ go get -d -t
 echo "Cleaning $GOPATH/pkg..."
 rm -rf $GOPATH/pkg
 
-go run main.go $@
+go build && ./pgit $@
+rm ./pgit
