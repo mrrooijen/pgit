@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pgit by meskyanichi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pgit</h1>
+        <p>Lightweight command-line utility for managing private repositories on a server.</p>
+
+        <p class="view"><a href="https://github.com/meskyanichi/pgit">View the Project on GitHub <small>meskyanichi/pgit</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/meskyanichi/pgit/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/meskyanichi/pgit/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/meskyanichi/pgit">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="pgit" class="anchor" href="#pgit" aria-hidden="true"><span class="octicon octicon-link"></span></a>PGit</h1>
+
+<p><a href="https://travis-ci.org/meskyanichi/pgit"><img src="https://travis-ci.org/meskyanichi/pgit.svg" alt="Build Status"></a></p>
+
+<p>Lightweight command-line utility for managing private repositories on a server.</p>
+
+<h3>
+<a id="platforms" class="anchor" href="#platforms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Platforms</h3>
+
+<ul>
+<li>Darwin (MacOSX)</li>
+<li>Linux</li>
+</ul>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li>Linux Server
+
+<ul>
+<li>i.e. $5/mo <a href="https://www.digitalocean.com/">Digital Ocean</a> node (I'm not affiliated with DO)</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
+
+<p>Grab the <a href="https://github.com/meskyanichi/pgit/releases/latest">latest release</a> for your platform, and place the <code>pgit</code> executable
+in a folder available in your <code>$PATH</code>. Next, add the <code>PGIT_URL</code> environment
+variable to your <code>$HOME/.bashrc</code> or similar file.</p>
+
+<pre><code>export PGIT_URL=&lt;user&gt;@&lt;host&gt;[:port]
+</code></pre>
+
+<h3>
+<a id="setup-server" class="anchor" href="#setup-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup Server</h3>
+
+<p>SSH into your server as root (or as a user with sudo privileges).</p>
+
+<p>Create a <code>git</code> user:</p>
+
+<div class="highlight highlight-sh"><pre>sudo adduser \
+  --home /home/git \
+  --shell /bin/bash \
+  --disabled-password \
+  git</pre></div>
+
+<p>Prepare the <code>authorized_keys</code> file:</p>
+
+<div class="highlight highlight-sh"><pre>sudo mkdir /home/git/.ssh
+sudo touch /home/git/.ssh/authorized_keys
+sudo chmod 700 /home/git/.ssh
+sudo chmod 600 /home/git/.ssh/authorized_keys
+sudo chown -R git:git /home/git/.ssh</pre></div>
+
+<p>Now store your <code>$HOME/.ssh/id_rsa.pub</code> in <code>/home/git/.ssh/authorized_keys</code>.</p>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Run <code>pgit help</code> to view the help screen:</p>
+
+<pre><code>Lightweight command-line utility for managing private repositories on a server.
+
+Usage:
+
+  pgit command [arguments]
+
+Commands:
+
+  list                         list all repositories
+  clip                         clip the url of a repository to your clipboard
+  create &lt;name&gt;                create a new repository
+  rename &lt;name&gt; &lt;new_name&gt;     rename an existing repository
+  destroy &lt;name&gt;               destroy an existing repository
+  version                      display the current pgit version
+  help                         display this help screen
+
+https://github.com/meskyanichi/pgit
+</code></pre>
+
+<h3>
+<a id="backups" class="anchor" href="#backups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backups</h3>
+
+<p>Checkout this <a href="https://github.com/meskyanichi/pgit/wiki/Backups">guide</a> that uses <a href="https://github.com/meskyanichi/backup">Backup</a> to perform periodic backup operations
+against your repositories.</p>
+
+<h3>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h3>
+
+<p>Fork/Clone the repository:</p>
+
+<div class="highlight highlight-sh"><pre>git clone https://github.com/meskyanichi/pgit.git
+<span class="pl-s3">cd</span> pgit</pre></div>
+
+<p>To run the program from source:</p>
+
+<div class="highlight highlight-sh"><pre>./bin/run [args]</pre></div>
+
+<p>To run test suite:</p>
+
+<div class="highlight highlight-sh"><pre>./bin/test</pre></div>
+
+<p>To build binaries for both Darwin/Linux:</p>
+
+<div class="highlight highlight-sh"><pre>./bin/build [open]</pre></div>
+
+<p>Create branch, add/improve/test feature, submit pull request.</p>
+
+<h3>
+<a id="author--license" class="anchor" href="#author--license" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author / License</h3>
+
+<p>Released under the <a href="https://github.com/meskyanichi/pgit/blob/master/LICENSE">MIT License</a> by <a href="https://twitter.com/meskyanichi">Michael van Rooijen</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/meskyanichi">meskyanichi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
