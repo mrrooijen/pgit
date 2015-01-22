@@ -116,11 +116,10 @@ Create branch, add/improve/test feature, submit pull request.
 
 ### Author / License
 
-Copyright (c) 2015 Michael van Rooijen ( [@meskyanichi] )<br />
-Released under the MIT [License].
+Released under the [MIT License] by [Michael van Rooijen].
 
-[@meskyanichi]: https://twitter.com/meskyanichi
-[License]: https://github.com/meskyanichi/pgit/blob/master/LICENSE
+[Michael van Rooijen]: https://twitter.com/meskyanichi
+[MIT License]: https://github.com/meskyanichi/pgit/blob/master/LICENSE
 [Backup]: https://github.com/meskyanichi/backup
 [Digital Ocean]: https://www.digitalocean.com/
 [guide]: https://github.com/meskyanichi/pgit/wiki/Backups
