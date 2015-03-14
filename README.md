@@ -30,6 +30,8 @@ variable to your `$HOME/.bashrc` or similar file.
 
 SSH into your server as root (or as a user with sudo privileges).
 
+Install [git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on the server.
+
 Create a `git` user:
 
 ```sh
