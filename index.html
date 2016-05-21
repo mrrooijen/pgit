@@ -1,42 +1,33 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Pgit by meskyanichi</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <title>Pgit by mrrooijen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Pgit</h1>
-        <p>Lightweight command-line utility for managing private repositories on a server.</p>
+    <section class="page-header">
+      <h1 class="project-name">Pgit</h1>
+      <h2 class="project-tagline">Lightweight command-line utility for managing private repositories on a server.</h2>
+      <a href="https://github.com/mrrooijen/pgit" class="btn">View on GitHub</a>
+      <a href="https://github.com/mrrooijen/pgit/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mrrooijen/pgit/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/meskyanichi/pgit">View the Project on GitHub <small>meskyanichi/pgit</small></a></p>
+    <section class="main-content">
+      <h1>
+<a id="pgit" class="anchor" href="#pgit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PGit</h1>
 
-
-        <ul>
-          <li><a href="https://github.com/meskyanichi/pgit/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/meskyanichi/pgit/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/meskyanichi/pgit">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a id="pgit" class="anchor" href="#pgit" aria-hidden="true"><span class="octicon octicon-link"></span></a>PGit</h1>
-
-<p><a href="https://travis-ci.org/meskyanichi/pgit"><img src="https://travis-ci.org/meskyanichi/pgit.svg" alt="Build Status"></a></p>
+<p><a href="https://travis-ci.org/mrrooijen/pgit"><img src="https://travis-ci.org/mrrooijen/pgit.svg" alt="Build Status"></a></p>
 
 <p>Lightweight command-line utility for managing private repositories on a server.</p>
 
 <h3>
-<a id="platforms" class="anchor" href="#platforms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Platforms</h3>
+<a id="platforms" class="anchor" href="#platforms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Platforms</h3>
 
 <ul>
 <li>Darwin (MacOSX)</li>
@@ -44,7 +35,7 @@
 </ul>
 
 <h3>
-<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
 
 <ul>
 <li>Linux Server
@@ -56,9 +47,9 @@
 </ul>
 
 <h3>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
 
-<p>Grab the <a href="https://github.com/meskyanichi/pgit/releases/latest">latest release</a> for your platform, and place the <code>pgit</code> executable
+<p>Grab the <a href="https://github.com/mrrooijen/pgit/releases/latest">latest release</a> for your platform, and place the <code>pgit</code> executable
 in a folder available in your <code>$PATH</code>. Next, add the <code>PGIT_URL</code> environment
 variable to your <code>$HOME/.bashrc</code> or similar file.</p>
 
@@ -66,13 +57,15 @@ variable to your <code>$HOME/.bashrc</code> or similar file.</p>
 </code></pre>
 
 <h3>
-<a id="setup-server" class="anchor" href="#setup-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup Server</h3>
+<a id="setup-server" class="anchor" href="#setup-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup Server</h3>
 
 <p>SSH into your server as root (or as a user with sudo privileges).</p>
 
+<p>Install <a href="http://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a> on the server.</p>
+
 <p>Create a <code>git</code> user:</p>
 
-<div class="highlight highlight-sh"><pre>sudo adduser \
+<div class="highlight highlight-source-shell"><pre>sudo adduser \
   --home /home/git \
   --shell /bin/bash \
   --disabled-password \
@@ -80,7 +73,7 @@ variable to your <code>$HOME/.bashrc</code> or similar file.</p>
 
 <p>Prepare the <code>authorized_keys</code> file:</p>
 
-<div class="highlight highlight-sh"><pre>sudo mkdir /home/git/.ssh
+<div class="highlight highlight-source-shell"><pre>sudo mkdir /home/git/.ssh
 sudo touch /home/git/.ssh/authorized_keys
 sudo chmod 700 /home/git/.ssh
 sudo chmod 600 /home/git/.ssh/authorized_keys
@@ -89,7 +82,7 @@ sudo chown -R git:git /home/git/.ssh</pre></div>
 <p>Now store your <code>$HOME/.ssh/id_rsa.pub</code> in <code>/home/git/.ssh/authorized_keys</code>.</p>
 
 <h3>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
 
 <p>Run <code>pgit help</code> to view the help screen:</p>
 
@@ -109,48 +102,50 @@ Commands:
   version                      display the current pgit version
   help                         display this help screen
 
-https://github.com/meskyanichi/pgit
+https://github.com/mrrooijen/pgit
 </code></pre>
 
 <h3>
-<a id="backups" class="anchor" href="#backups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backups</h3>
+<a id="backups" class="anchor" href="#backups" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backups</h3>
 
-<p>Checkout this <a href="https://github.com/meskyanichi/pgit/wiki/Backups">guide</a> that uses <a href="https://github.com/meskyanichi/backup">Backup</a> to perform periodic backup operations
+<p>Checkout this <a href="https://github.com/mrrooijen/pgit/wiki/Backups">guide</a> that uses <a href="https://github.com/mrrooijen/backup">Backup</a> to perform periodic backup operations
 against your repositories.</p>
 
 <h3>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h3>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h3>
 
 <p>Fork/Clone the repository:</p>
 
-<div class="highlight highlight-sh"><pre>git clone https://github.com/meskyanichi/pgit.git
-<span class="pl-s3">cd</span> pgit</pre></div>
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/mrrooijen/pgit.git
+<span class="pl-c1">cd</span> pgit</pre></div>
 
 <p>To run the program from source:</p>
 
-<div class="highlight highlight-sh"><pre>./bin/run [args]</pre></div>
+<div class="highlight highlight-source-shell"><pre>./bin/run [args]</pre></div>
 
 <p>To run test suite:</p>
 
-<div class="highlight highlight-sh"><pre>./bin/test</pre></div>
+<div class="highlight highlight-source-shell"><pre>./bin/test</pre></div>
 
 <p>To build binaries for both Darwin/Linux:</p>
 
-<div class="highlight highlight-sh"><pre>./bin/build [open]</pre></div>
+<div class="highlight highlight-source-shell"><pre>./bin/build [open]</pre></div>
 
 <p>Create branch, add/improve/test feature, submit pull request.</p>
 
 <h3>
-<a id="author--license" class="anchor" href="#author--license" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author / License</h3>
+<a id="author--license" class="anchor" href="#author--license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author / License</h3>
 
-<p>Released under the <a href="https://github.com/meskyanichi/pgit/blob/master/LICENSE">MIT License</a> by <a href="https://twitter.com/meskyanichi">Michael van Rooijen</a>.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/meskyanichi">meskyanichi</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>Released under the <a href="https://github.com/mrrooijen/pgit/blob/master/LICENSE">MIT License</a> by <a href="https://twitter.com/mrrooijen">Michael van Rooijen</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mrrooijen/pgit">Pgit</a> is maintained by <a href="https://github.com/mrrooijen">mrrooijen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
