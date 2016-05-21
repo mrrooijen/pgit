@@ -86,35 +86,6 @@ Checkout this [guide] that uses [Backup] to perform periodic backup operations
 against your repositories.
 
 
-### Contributing
-
-Fork/Clone the repository:
-
-```sh
-git clone https://github.com/mrrooijen/pgit.git
-cd pgit
-```
-
-To run the program from source:
-
-```sh
-./bin/run [args]
-```
-
-To run test suite:
-
-```sh
-./bin/test
-```
-
-To build binaries for both Darwin/Linux:
-
-```sh
-./bin/build [open]
-```
-
-Create branch, add/improve/test feature, submit pull request.
-
 
 ### Author / License
 
