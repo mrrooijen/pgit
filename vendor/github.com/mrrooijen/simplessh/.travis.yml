@@ -1,0 +1,5 @@
+install: go get -d -t -v
+language: go
+go:
+  - 1.3
+  - tip
