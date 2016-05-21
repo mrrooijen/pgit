@@ -1,6 +1,6 @@
 # PGit
 
-[![Build Status](https://travis-ci.org/meskyanichi/pgit.svg)](https://travis-ci.org/meskyanichi/pgit)
+[![Build Status](https://travis-ci.org/mrrooijen/pgit.svg)](https://travis-ci.org/mrrooijen/pgit)
 
 Lightweight command-line utility for managing private repositories on a server.
 
@@ -76,7 +76,7 @@ Commands:
   version                      display the current pgit version
   help                         display this help screen
 
-https://github.com/meskyanichi/pgit
+https://github.com/mrrooijen/pgit
 ```
 
 
@@ -91,7 +91,7 @@ against your repositories.
 Fork/Clone the repository:
 
 ```sh
-git clone https://github.com/meskyanichi/pgit.git
+git clone https://github.com/mrrooijen/pgit.git
 cd pgit
 ```
 
@@ -120,9 +120,9 @@ Create branch, add/improve/test feature, submit pull request.
 
 Released under the [MIT License] by [Michael van Rooijen].
 
-[Michael van Rooijen]: https://twitter.com/meskyanichi
-[MIT License]: https://github.com/meskyanichi/pgit/blob/master/LICENSE
-[Backup]: https://github.com/meskyanichi/backup
+[Michael van Rooijen]: https://twitter.com/mrrooijen
+[MIT License]: https://github.com/mrrooijen/pgit/blob/master/LICENSE
+[Backup]: https://github.com/mrrooijen/backup
 [Digital Ocean]: https://www.digitalocean.com/
-[guide]: https://github.com/meskyanichi/pgit/wiki/Backups
-[latest release]: https://github.com/meskyanichi/pgit/releases/latest
+[guide]: https://github.com/mrrooijen/pgit/wiki/Backups
+[latest release]: https://github.com/mrrooijen/pgit/releases/latest

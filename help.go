@@ -20,6 +20,6 @@ Commands:
   version                      display the current pgit version
   help                         display this help screen
 
-https://github.com/meskyanichi/pgit
+https://github.com/mrrooijen/pgit
 	`)
 }

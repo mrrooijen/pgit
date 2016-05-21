@@ -5,7 +5,7 @@ import "regexp"
 import "strconv"
 import "strings"
 import "errors"
-import "github.com/meskyanichi/simplessh"
+import "github.com/mrrooijen/simplessh"
 
 type PgitUrl struct {
 	Url  string
